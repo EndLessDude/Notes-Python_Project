@@ -9,3 +9,14 @@ function deleteNote(noteId){
         window.location.href = "/";
     });
 }
+
+// Auto-resize the note textarea as the user types
+document.addEventListener('DOMContentLoaded', function() {
+    const textarea = document.getElementById('note');
+    if (textarea) {
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+    }
+});
